@@ -5,10 +5,10 @@ on:
       - 'master'
       - 'release-*'
   push:
-    branches:
-      - 'master'
-      - 'release-*'
-    tags: '*'
+    # branches:
+    #  - 'master'
+    #  - 'release-*'
+    # tags: '*'
 jobs:
   test:
     runs-on: ${{ matrix.os }}
@@ -16,15 +16,15 @@ jobs:
       fail-fast: false
       matrix:
         julia-version:
-          - '1'
+          # '1'
           - '~1.7.0-0'
           # - 'nightly'
         julia-arch:
           - 'x64'
-          - 'x86'
+          # 'x86'
         os:
           - ubuntu-latest
-          - macOS-latest
+          - macos-12
           - windows-latest
         exclude:
           - os: macOS-latest
